@@ -10,7 +10,10 @@ class MyUserAdmin(UserAdmin):
             'first_name',
             'last_name',
             'email',
-            'qualifications'
+            'qualifications',
+            'qualification_specific',
+            'restrictions',
+            'restriction_specific'
         )}),
         (('Permissions'), {'fields': (
             'is_active',
@@ -29,8 +32,10 @@ class MyUserAdmin(UserAdmin):
                 'username',
                 'email',
                 'password1',
-                'password2',
-                'qualifications'
+                'qualifications',
+                'qualification_specific',
+                'restrictions',
+                'restriction_specific'
             )}
         ),
     )

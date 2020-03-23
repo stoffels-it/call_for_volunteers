@@ -7,8 +7,7 @@ class Person(AbstractUser):
     qualifications = models.ManyToManyField('Qualification')
     qualification_specific = models.CharField(
         max_length=60, null=True, blank=True)
-    restriction = models.ForeignKey(
-        'Restriction', on_delete=models.SET_NULL, null=True, blank=True)
+    restrictions = models.ManyToManyField('Restriction')
     restriction_specific = models.CharField(
         max_length=60, null=True, blank=True)
     street = models.CharField(max_length=30, null=True, blank=True)
