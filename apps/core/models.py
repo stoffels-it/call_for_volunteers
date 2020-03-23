@@ -4,17 +4,63 @@ from phone_field import PhoneField
 
 
 class Person(AbstractUser):
-    qualifications = models.ManyToManyField('Qualification', blank=True)
+    qualifications = models.ManyToManyField(
+        'Qualification',
+        blank=True,
+        verbose_name="Qualifikation",
+    )
     qualification_specific = models.CharField(
-        max_length=60, null=True, blank=True)
-    restrictions = models.ManyToManyField('Restriction', blank=True)
+        max_length=60,
+        null=True,
+        blank=True,
+        verbose_name="Qualif. Details",
+    )
+    restrictions = models.ManyToManyField(
+        'Restriction',
+        blank=True,
+        verbose_name="Einschränkung",
+    )
     restriction_specific = models.CharField(
-        max_length=60, null=True, blank=True)
-    street = models.CharField(max_length=30, null=True, blank=True)
-    number = models.PositiveIntegerField(null=True, blank=True)
-    postal_code = models.PositiveIntegerField(null=True, blank=True)
-    city = models.CharField(max_length=50, null=True, blank=True)
-    remark = models.CharField(max_length=1000, null=True, blank=True)
+        max_length=60,
+        null=True,
+        blank=True,
+        verbose_name="Einschränkung Details",
+    )
+    occupation = models.CharField(
+        max_length=30,
+        null=True,
+        blank=True,
+        verbose_name="Beruf",
+    )
+    street = models.CharField(
+        max_length=30,
+        null=True,
+        blank=True,
+        verbose_name="Straße",
+    )
+    number = models.CharField(
+        max_length=8,
+        null=True,
+        blank=True,
+        verbose_name="Hausnr.",
+    )
+    postal_code = models.PositiveIntegerField(
+        null=True,
+        blank=True,
+        verbose_name="PLZ",
+    )
+    city = models.CharField(
+        max_length=50,
+        null=True,
+        blank=True,
+        verbose_name="Ort",
+    )
+    remark = models.CharField(
+        max_length=1000,
+        null=True,
+        blank=True,
+        verbose_name="Anmerkungen",
+    )
 
     def __str__(self):
         return u'%s %s' % (self.first_name, self.last_name)

@@ -39,6 +39,29 @@ class MyUserAdmin(UserAdmin):
             )}
         ),
     )
+    list_display = [
+        "email",
+        "first_name",
+        "last_name",
+        "postal_code",
+        "city",
+        "occupation",
+        "get_qualifications",
+        "qualification_specific",
+        "get_restrictions",
+        "restriction_specific",
+    ]
+
+    def get_qualifications(self, obj):
+        return "\n".join([q.name for q in obj.qualifications.all()])
+
+    get_qualifications.short_description = "Qualifikationen"
+
+    def get_restrictions(self, obj):
+        return "\n".join([r.name for r in obj.restrictions.all()])
+
+    get_restrictions.short_description = "Einschränkungen"
+
 
 @admin.register(ActionCategory)
 class ActionCategoryAdmin(admin.ModelAdmin):
