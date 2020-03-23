@@ -146,8 +146,8 @@ class BlogEntry(MixinPublication, models.Model):
         return '%s' % self.title
 
     class Meta:
-        verbose_name = "Webseitenartikel"
-        verbose_name_plural = "Webseitenartikel"
+        verbose_name = "Webseiteneintrag"
+        verbose_name_plural = "Webseiteneinträge"
 
 
 class SentArchive(models.Model):
