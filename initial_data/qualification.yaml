@@ -1,0 +1,33 @@
+- model: core.qualification
+  fields:
+    name: Technik - Digitalfunk
+- model: core.qualification
+  fields:
+    name: Technik - Analogfunk
+- model: core.qualification
+  fields:
+    name: IT - Programmierung
+- model: core.qualification
+  fields:
+    name: IT - Linux
+- model: core.qualification
+  fields:
+    name: Sprachen - Englisch
+- model: core.qualification
+  fields:
+    name: Sprachen - Französisch
+- model: core.qualification
+  fields:
+    name: Sprachen - Spanisch
+- model: core.qualification
+  fields:
+    name: Sprachen - Arabisch
+- model: core.qualification
+  fields:
+    name: Führerscheine - LKW
+- model: core.qualification
+  fields:
+    name: Führerscheine - Normal (B)
+- model: core.qualification
+  fields:
+    name: Führerscheine - Boot
