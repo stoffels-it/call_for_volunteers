@@ -4,10 +4,10 @@ from phone_field import PhoneField
 
 
 class Person(AbstractUser):
-    qualifications = models.ManyToManyField('Qualification')
+    qualifications = models.ManyToManyField('Qualification', blank=True)
     qualification_specific = models.CharField(
         max_length=60, null=True, blank=True)
-    restrictions = models.ManyToManyField('Restriction')
+    restrictions = models.ManyToManyField('Restriction', blank=True)
     restriction_specific = models.CharField(
         max_length=60, null=True, blank=True)
     street = models.CharField(max_length=30, null=True, blank=True)
